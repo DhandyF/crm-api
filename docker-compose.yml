@@ -1,33 +1,19 @@
 version: '3.8'
 
 services:
-  api:
+  crm-api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: crm-api
-    restart: unless-stopped
     working_dir: /var/www
     volumes:
       - ./:/var/www
     ports:
-      - "8100:8000"
-    depends_on:
-      - db
+      - "8000:8000"
+    networks:
+      - crm-network
 
-  db:
-    image: mysql:8.0
-    container_name: mysql
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-    volumes:
-      - db_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
-
-volumes:
-  db_data:
+networks:
+  crm-network:
+    external: true
