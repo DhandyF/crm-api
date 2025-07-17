@@ -82,6 +82,8 @@ If you prefer using `docker-compose`:
     docker-compose down
     ```
 
+---
+
 ## 🔌 API Endpoints
 
 Base URL: http://localhost:8000/api
@@ -110,6 +112,8 @@ Example request body for creating a call log:
 }
 ```
 
+---
+
 ## 🧪 Testing
 
 You can use Postman or curl to test endpoints manually.
@@ -118,6 +122,8 @@ Example:
 ```bash
 curl http://localhost:8000/api/contacts
 ```
+
+---
 
 ## 🧩 Running the Full CRM Stack in Docker
 To run the entire CRM application including the frontend, backend, and database, follow this order:
