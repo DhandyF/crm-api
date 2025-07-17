@@ -143,5 +143,5 @@ docker-compose up -d --build  # Run from this repo
 ### 3. Start the Vue Frontend (crm-ui)
 Go to your crm-ui directory and run:
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
