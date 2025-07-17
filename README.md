@@ -2,7 +2,9 @@
 
 CRM-API is a backend RESTful API built with **Laravel 12** and **PHP 8.2**. It provides endpoints to manage contact data, mark contacts as favorite, retrieve call logs, and log mock VoIP call activity.
 
-This API is designed to work with the companion [CRM-UI frontend](https://github.com/DhandyF/crm-ui) built in Vue.js.
+This API is designed to work with:
+- [crm-ui](https://github.com/DhandyF/crm-ui) (Frontend - Vue 2)
+- [crm-db](https://github.com/DhandyF/crm-db) (Database - MySQL 8.0)
 
 ---
 
@@ -66,9 +68,7 @@ http://localhost:8000/api
 ---
 
 ## 🐳 Docker Setup
-If you prefer using Docker:
-
-**Using Docker Compose**
+If you prefer using `docker-compose`:
 
 1. **Start services**
 
@@ -117,4 +117,25 @@ You can use Postman or curl to test endpoints manually.
 Example:
 ```bash
 curl http://localhost:8000/api/contacts
+```
+
+## 🧩 Running the Full CRM Stack in Docker
+To run the entire CRM application including the frontend, backend, and database, follow this order:
+
+### 1. Start the Database First (crm-db)
+Go to your crm-db directory and run:
+```bash
+docker-compose up -d
+```
+
+### 2. Start the Laravel API (crm-api)
+Go to your crm-api directory and run:
+```bash
+docker-compose up -d --build  # Run from this repo
+```
+
+### 3. Start the Vue Frontend (crm-ui)
+Go to your crm-ui directory and run:
+```bash
+docker-compose up -d
 ```
